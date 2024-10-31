@@ -19,8 +19,6 @@ public class PagamentoService {
 
 
 
-// ...
-
     public PagamentoDTO save(PagamentoDTO pagamentoDTO) {
         // Verifica se o valor é menor ou igual a zero
         if (pagamentoDTO.getValor() == null || pagamentoDTO.getValor().compareTo(BigDecimal.ZERO) <= 0) {
