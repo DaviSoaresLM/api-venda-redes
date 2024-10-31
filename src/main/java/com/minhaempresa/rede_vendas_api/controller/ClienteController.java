@@ -44,7 +44,7 @@ public class ClienteController {
             @ApiResponse(responseCode = "200", description = "Lista de clientes obtida com sucesso"),
             @ApiResponse(responseCode = "404", description = "Nenhum cliente encontrado")
     })
-    @GetMapping("/all")
+    @GetMapping("/cliente/all")
     public List<ClienteDTO> findAll() {
         return service.findAll();
     }
@@ -54,7 +54,7 @@ public class ClienteController {
             @ApiResponse(responseCode = "204", description = "Cliente deletado com sucesso"),
             @ApiResponse(responseCode = "404", description = "Cliente não encontrado")
     })
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/cliente/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
@@ -64,7 +64,7 @@ public class ClienteController {
             @ApiResponse(responseCode = "200", description = "Cliente encontrado com sucesso"),
             @ApiResponse(responseCode = "404", description = "Cliente não encontrado")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/cliente/{id}")
     public ClienteDTO findById(@PathVariable Long id) {
         return service.findById(id);
     }
