@@ -3,6 +3,8 @@ package com.minhaempresa.rede_vendas_api.data.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "tb_pedidos")
 @Data
@@ -12,14 +14,18 @@ public class Pedidos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
-    private String cliente_id;
-    private String produto_id;
-    private String quantidade;
-    private String data_pedido;
+    @ManyToOne //referencia diretamente as classes Cliente e Produto
+    @JoinColumn(name = "cliente_id", nullable = false)
+    private Cliente cliente;
 
+    @ManyToOne // cria uma chave estrangeira para essas relações, permitindo que o JPA lide automaticamente com o relacionamento
+    @JoinColumn(name = "produto_id", nullable = false)
+    private Produto produto;
 
+    @Column(nullable = false)
+    private Integer quantidade;
 
-
-
+    @Column(name = "data_pedido", nullable = false)
+    private LocalDate dataPedido;
 }
+
