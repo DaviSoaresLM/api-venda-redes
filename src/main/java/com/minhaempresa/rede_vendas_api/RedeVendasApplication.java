@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "API Venda de Redes -> Topicos Especiais",
+                title = "API Venda de Redes",
                 version = "1.0",
-                description = "Trata-se da API que está sendo desenvolvida na disicplina TEPW",
+                description = "Trata-se de uma API que está sendo desenvolvida na disicplina TEPW",
                 contact = @Contact(
                         name = "Davi",
                         email = "davisoaresdasilva1203@gmail.com",
