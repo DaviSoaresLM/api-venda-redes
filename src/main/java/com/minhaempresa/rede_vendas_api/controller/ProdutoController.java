@@ -23,8 +23,8 @@ public class ProdutoController {
             @ApiResponse(responseCode = "400", description = "Exception não tratada.")
     })
     @PostMapping
-    public ProdutoDTO create(@RequestBody ProdutoDTO cliente) {
-        return service.save(cliente);
+    public ProdutoDTO create(@RequestBody ProdutoDTO produto) {
+        return service.save(produto);
     }
 
     @Operation(summary = "Atualiza os dados de um Produto", tags = "Produto")
@@ -34,8 +34,8 @@ public class ProdutoController {
             @ApiResponse(responseCode = "404", description = "Produto não encontrado")
     })
     @PutMapping
-    public ProdutoDTO update(@RequestBody ProdutoDTO cliente) {
-        return service.save(cliente);
+    public ProdutoDTO update(@RequestBody ProdutoDTO produto) {
+        return service.save(produto);
     }
 
     @Operation(summary = "Lista todos os Produtos", tags = "Produto")
