@@ -20,7 +20,7 @@ public class ItemPedido {
 
     @ManyToOne
     @JoinColumn(name = "produto_id", nullable = false)
-    private Produto produto; // Referência ao produto
+    private Produto produto;
 
     @Column(nullable = false)
     private Integer quantidade;
